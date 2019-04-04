@@ -1,0 +1,75 @@
+** Microservices: Credit Karma **
+
+Service Discovery:
+- client side service discovery
+- Service Registry/Mesh like Consul
+
+- Service registry using Redis: Hydra (npm package for service discovery and 
+load balancing)
+
+https://hydramicroservice.com
+
+- Rate Limiting: using Redis
+use INCR in a key with EXPIRE key can be per-user or per-service
+
+Service Meshes: Estio, Linkerd (at Credit Karma)
+
+- Service mesh can be deployed as a sidecar container in a pod.
+
+
+* Observability: 
+
+
+container CPU memory, disk network usage, request latency...
+
+Do you really care for CPU spike when customers are happy?
+
+Logs: ELK, Splunk, Sumo logic
+Metrics: Prometheus
+Tracing: Jaeger (by Uber), Stackdriver, Zipkin
+
+
+** Bambleweeny (B9y) **
+https://github.com/u1i/slides
+
+pip install b9y
+
+docker image => u1ih/bambleweeny
+
+
+** 2 problems with redis active-active dbs = latency and conflict resolution
+Aim: how do you develop apps using Redis CRDTs
+
+LWW(Last Write Wins): e.g: couchbase
+
+- Active-active is available in Redis enterprise only(not part of open-source offering)
+
+
+https://github.com/internetarchive/work-stealing
+
+https://lp.redislabs.com/rs/915-NFD-128/images/WP-RedisLabs-How-to-Build-Apps-using-Redis-Streams.pdf
+
+https://redislabs.com/rlsessions_post_type/redis-job-cache-distributed-video-rendering-pipeline/
+
+https://github.com/openresty
+
+https://openai.com/blog/openai-five/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
